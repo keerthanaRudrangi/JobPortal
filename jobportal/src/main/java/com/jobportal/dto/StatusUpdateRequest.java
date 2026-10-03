@@ -1,0 +1,24 @@
+package com.jobportal.dto;
+
+import jakarta.validation.constraints.Pattern;
+
+import jakarta.validation.constraints.NotBlank;
+
+public class StatusUpdateRequest {
+	
+	 @NotBlank(message = "Status is required")
+	 @Pattern(
+			 regexp = "^$|Applied|Shortlisted|Rejected|Selected",
+		    message = "Status must be Applied, Shortlisted, Rejected, or Selected"
+	 )
+	  private String status;
+
+	    public String getStatus() {
+	        return status;
+	    }
+
+	    public void setStatus(String status) {
+	        this.status = status;
+	    }
+
+}
